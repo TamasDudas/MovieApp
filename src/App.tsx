@@ -1,12 +1,20 @@
-import { Button } from './components/ui/button';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import FavoritesPage from './components/FavoritesPage';
+import MovieDetailPage from './components/MovieDetailPage';
 
 function App() {
-return (
-<div className="max-w-7xl mx-auto p-8">
-<h1 className="font-bold underline text-7xl">Hello Word</h1>
-<Button variant="default">Click me</Button>
-</div>
-);
+ return (
+  <BrowserRouter>
+   <Navbar />
+   <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/favorites" element={<FavoritesPage />} />
+    <Route path="/movie/:id" element={<MovieDetailPage />} />
+   </Routes>
+  </BrowserRouter>
+ );
 }
 
 export default App;
