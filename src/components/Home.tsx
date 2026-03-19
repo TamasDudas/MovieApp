@@ -32,7 +32,7 @@ export default function Home() {
   <div>
    {loading && <p>Loading...</p>}
    {error && <p>{error}</p>}
-   <div className="grid grid-cols-3 gap-4">
+   <div className="flex flex-wrap flex-1 gap-x-2 gap-y-12">
     {movies.map((movie) => (
      <MovieCard key={movie.id} movie={movie} />
     ))}

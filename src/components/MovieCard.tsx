@@ -17,12 +17,12 @@ interface MovieCardProps {
 
 export default function MovieCard({ movie }: MovieCardProps) {
  return (
-  <Card className="relative mx-auto w-full max-w-sm pt-0">
-   <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
+  <Card className="relative mx-auto  max-w-sm pt-0 ">
+   <div className="absolute  bg-black/35" />
    <img
     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
     alt={movie.title}
-    className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
+    className="w-full object-fit "
    />
    <CardHeader>
     <CardAction>
@@ -30,7 +30,7 @@ export default function MovieCard({ movie }: MovieCardProps) {
     </CardAction>
     <CardTitle>{movie.title}</CardTitle>
     <CardDescription>{movie.overview}</CardDescription>
-    <div className="flex items-stretch justify-between">
+    <div className="flex items-stretch justify-between my-4">
      <p>{movie.release_date}</p>
      <div className="flex gap-1">
       <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
