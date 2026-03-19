@@ -16,3 +16,10 @@ export interface ApiResponse {
  total_pages: number;
  total_results: number;
 }
+
+export type Action =
+ | { type: 'SET_MOVIES'; payload: Movie[] }
+ | {
+    type: 'TOGGLE_FLAG';
+    payload: { id: number; flag: 'isFavorite' | 'isWatched' | 'isPlanned' };
+   };
