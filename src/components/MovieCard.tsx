@@ -13,11 +13,11 @@ interface MovieCardProps {
 
 export default function MovieCard({ movie, onToggleFlag }: MovieCardProps) {
  return (
-  <Card className="flex max-w-full p-0">
+  <Card>
    <img
     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
     alt={movie.title}
-    className="w-full object-cover m-0  "
+    className=" object-cover m-0  "
    />
    <CardHeader className="p-4 flex flex-col gap-2">
     <div>
@@ -25,12 +25,14 @@ export default function MovieCard({ movie, onToggleFlag }: MovieCardProps) {
       <Badge
        variant={movie.isFavorite ? 'default' : 'outline'}
        onClick={() => onToggleFlag(movie.id, 'isFavorite')}
+       className="cursor-pointer"
       >
        Favorite
       </Badge>
       <Badge
        variant={movie.isPlanned ? 'default' : 'outline'}
        onClick={() => onToggleFlag(movie.id, 'isPlanned')}
+       className="cursor-pointer"
       >
        Planned
       </Badge>
@@ -38,6 +40,7 @@ export default function MovieCard({ movie, onToggleFlag }: MovieCardProps) {
       <Badge
        variant={movie.isWatched ? 'default' : 'outline'}
        onClick={() => onToggleFlag(movie.id, 'isWatched')}
+       className="cursor-pointer"
       >
        Watched
       </Badge>

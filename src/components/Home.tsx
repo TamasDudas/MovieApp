@@ -39,7 +39,7 @@ export default function Home({ movies, onSetMovies, onToggleFlag }: HomeProps) {
   }
  }, []);
  return (
-  <div>
+  <div className="max-w-7xl mx-auto py-8">
    {loading && <p>Loading...</p>}
    {error && <p>{error}</p>}
    <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-6 px-6">
