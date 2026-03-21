@@ -19,24 +19,26 @@ function App() {
  return (
   <BrowserRouter>
    <Navbar />
-   <Routes>
-    <Route
-     path="/"
-     element={
-      <Home
-       movies={movies}
-       onSetMovies={(movies) =>
-        dispatch({ type: 'SET_MOVIES', payload: movies })
-       }
-       onToggleFlag={(id, flag) =>
-        dispatch({ type: 'TOGGLE_FLAG', payload: { id, flag } })
-       }
-      />
-     }
-    />
-    <Route path="/favorites" element={<FavoritesPage />} />
-    <Route path="/movie/:id" element={<MovieDetailPage />} />
-   </Routes>
+   <main className="max-w-7xl mx-auto py-8">
+    <Routes>
+     <Route
+      path="/"
+      element={
+       <Home
+        movies={movies}
+        onSetMovies={(movies) =>
+         dispatch({ type: 'SET_MOVIES', payload: movies })
+        }
+        onToggleFlag={(id, flag) =>
+         dispatch({ type: 'TOGGLE_FLAG', payload: { id, flag } })
+        }
+       />
+      }
+     />
+     <Route path="/favorites" element={<FavoritesPage />} />
+     <Route path="/movie/:id" element={<MovieDetailPage />} />
+    </Routes>
+   </main>
   </BrowserRouter>
  );
 }
