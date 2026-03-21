@@ -1,12 +1,4 @@
-import { Button } from '@/components/ui/button';
-import {
- Card,
- CardAction,
- CardDescription,
- CardFooter,
- CardHeader,
- CardTitle,
-} from '@/components/ui/card';
+import { Card, CardAction, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import type { Movie } from '../types/type';
 import { Star } from 'lucide-react';
